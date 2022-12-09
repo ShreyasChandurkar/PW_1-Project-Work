@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 20px 100px;
+    z-index: 100000;
+}
+
+header a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content{
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#home">Home</a>
+  <div class="subnav">
+    <button class="subnavbtn">Workers Data <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#company">Display Worker Data</a>
+      <a href="#team">Add Worker</a>
+      <a href="#careers">Remove Worker</a>
+      <a href="#careers">Change Workers role</a>
+    </div>
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Train Data <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#bring">Display Trian Details</a>
+      <a href="#deliver">Change Trains Schedule</a>
+      <a href="#package">Cancel Train</a>
+    </div>
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Passenger Data <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#link1">Display Passenger Details</a>
+    </header>
+
+</body>
+</html>
