@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mumbai Local</title>
+        <link rel="stylesheet" href="CSS/adm_login.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <script>
+            function sub1_open()
+            {
+                document.getElementById("sub1").style.display="block";
+                document.getElementById("sub2").style.display="none";
+                document.getElementById("sub3").style.display="none";
+            }
+
+            function sub2_open()
+            {
+                document.getElementById("sub1").style.display="none";
+                document.getElementById("sub2").style.display="block";
+                document.getElementById("sub3").style.display="none";
+            }
+
+            function sub3_open()
+            {
+                document.getElementById("sub1").style.display="none";
+                document.getElementById("sub2").style.display="none";
+                document.getElementById("sub3").style.display="block";
+            }
+
+            function add_wrk(){
+                document.getElementById("pop1").style.display="block";
+            }
+
+            function close_add_wrk(){
+                document.getElementById("pop1").style.display="none";
+            }
+            
+            function remove_wrk(){
+                document.getElementById("pop2").style.display="block";
+            }
+
+            function close_remove_wrk(){
+                document.getElementById("pop2").style.display="none";
+            }
+
+            function change_wrk(){
+                document.getElementById("pop3").style.display="block";
+            }
+
+            function close_change_wrk(){
+                document.getElementById("pop3").style.display="none";
+            }
+
+            function change_trn_schedule(){
+                document.getElementById("pop5").style.display="block";
+            }
+
+            function close_change_schedule(){
+                document.getElementById("pop5").style.display="none";
+            }
+
+            function cancel_trn(){
+                document.getElementById("pop6").style.display="block";
+            }
+
+            function close_cancel_trn(){
+                document.getElementById("pop6").style.display="none";
+            }
+            
+            function display_pas(){
+                document.getElementById("pop7").style.display="block";
+            }
+
+            function display_pas_close(){
+                document.getElementById("pop7").style.display="none";
+            }
+
+            function valid_wrk()
+            {
+                var regex_mob = /^\d{10}$/;
+                var regex_name = /^[A-Za-z]+$/;
+
+                var str_mob = document.getElementById("wrk_mob").value;
+                var str_fn = document.getElementById("wrk_name").value;
+                var str_ln = document.getElementById("wrk_role").value;
+
+                var res_mob = regex_mob.test(str_mob);
+                var res_fn = regex_name.test(str_fn);
+                var res_ln = regex_name.test(str_ln);
+
+                if(res_mob == false || res_fn == false || res_ln == false)
+                {
+                    window.alert("Please Enter Proper Details..!!")
+                }
+            }
+
+            function valid_wrk2()
+            {
+                var regex_mob = /^\d{10}$/;
+                var regex_name = /^[A-Za-z]+$/;
+
+                var str_mob = document.getElementById("wrk_mob2").value;
+                var str_fn = document.getElementById("wrk_name2").value;
+                var str_ln = document.getElementById("wrk_role2").value;
+
+                var res_mob = regex_mob.test(str_mob);
+                var res_fn = regex_name.test(str_fn);
+                var res_ln = regex_name.test(str_ln);
+
+                if(res_mob == false || res_fn == false || res_ln == false)
+                {
+                    window.alert("Please Enter Proper Details..!!")
+                }
+            }
+
+            function valid_wrk3()
+            {
+                var regex_name = /^[A-Za-z]+$/;
+
+                var str_fn = document.getElementById("wrk_name3").value;
+                var str_ln = document.getElementById("wrk_role3").value;
+
+                var res_fn = regex_name.test(str_fn);
+                var res_ln = regex_name.test(str_ln);
+
+                if(res_fn == false || res_ln == false)
+                {
+                    window.alert("Please Enter Proper Details..!!")
+                }
+            }
+
+            function valid_trn()
+            {
+                var regex_tno = /^[0-9]+$/;
+                var str_no = document.getElementById("tno").value;
+                var res_no = regex_tno.test(str_no);
+
+                if(res_no == false)
+                {
+                    window.alert("Please Enter Proper Details..!!")
+                }
+            }
+        </script>
+
+        <header>
+            <a href="#" class="logo">MuMBaI LoCaL</a>
+
+            <ul>
+                <li><button class="subnavbtn" onclick="window.location.href='example.html'">Home</button></li>
+
+                <div class="subnav">
+                    <li><button class="subnavbtn" onclick="sub1_open()">Workers Data <i class="fa fa-caret-down"></i></button></li>
+
+                    <div class="subnav-content" id="sub1">
+                        <a onclick="add_wrk()">Add Worker</a>
+                        <a onclick="remove_wrk()">Remove Worker</a>
+                        <a onclick="change_wrk()">Change Workers role</a>
+                    </div>
+                </div>
+
+                <div class="subnav">
+                    <li><button class="subnavbtn" onclick="sub2_open()">Train Data <i class="fa fa-caret-down"></i></button></li>
+
+                    <div class="subnav-content" id="sub2">
+                        <a onclick="change_trn_schedule()">Change Trains Schedule</a>
+                        <a onclick="cancel_trn()">Cancel Train</a>
+                    </div>
+                </div>
+
+                <div class="subnav">
+                    <li><button class="subnavbtn" onclick="sub3_open()">Passenger Data <i class="fa fa-caret-down"></i></button></li>
+
+                    <div class="subnav-content" id="sub3">
+                        <a><form action="dispass.php" method="post"><input type="submit" value="Display Passenger Details"></form></a>
+                    </div>
+                </div>
+            </ul>
+        </header>
+        
+        <section class="banner"></section>
+
+        <div class="welcome">
+            <h1>Welcome to Mumbai-Local Admin....!!</h1>
+        </div>
+
+        <div class="popup_form1" id="pop1">
+            <form action="connect.php" method="post">
+                <h4>Add Worker</h4><hr><br>
+                <div class="close-btn"><button onclick="close_add_wrk()">&times;</button></div>
+
+                Enter Name: 
+                <input type="text" id="wrk_name" name="wname" required><br><br>
+
+                Enter E-mail:
+                <input type="email" id="wrk_email" name="wemail" required><br><br>
+
+                Enter Contact Number:
+                <input type="number" id="wrk_mob" name="wmob" required><br><br>
+
+                Enter Job role:
+                <input type="text" id="wrk_role" name="wrole" required><br><br>
+                <input type="submit" id="add_btn" value="ADD" onclick="valid_wrk()">
+            </form>
+        </div>
+
+        <div class="popup_form2" id="pop2">
+            <form  action="connectr.php" method="post">
+                <h4>Remove Worker</h4><hr><br>
+                <div class="close-btn"><button onclick="close_remove_wrk()">&times;</button></div>
+
+                Enter Name: 
+                <input type="text" id="wrk_name2" name="wname"><br><br>
+
+                Enter Contact Number:
+                <input type="number" id="wrk_mob2" name="wmob"><br><br>
+                
+                Enter Job role:
+                <input type="text" id="wrk_role2" name="wrole"><br><br>
+                <input type="submit" id="add_btn" value="Remove" onclick="valid_wrk2()">
+            </form>
+        </div>
+
+        <div class="popup_form3" id="pop3">
+            <form action="connectup.php" method="post">
+                <h4>Change Workers role</h4><hr><br>
+                <div class="close-btn"><button onclick="close_change_wrk()">&times;</button></div>
+
+                Enter Name: 
+                <input type="text" id="wrk_name3" name="wname"><br><br>
+
+                Enter Job role:
+                <input type="text" id="wrk_role3" name="wrole"><br><br>
+                <input type="submit" id="add_btn" value="Change" onclick="valid_wrk3()">
+            </form>
+        </div>
+
+        <div class="popup_form5" id="pop5">
+            <form action="trtime.php" method="post">
+                <h4>Change Train's Schedule</h4><hr><br>
+                <div class="close-btn"><button onclick="close_change_schd()">&times;</button></div>
+
+                Enter Train No: 
+                <input type="text" id="tno" name="tno" required><br><br>
+
+                Enter New Departure Time:
+                <input type="text" id="trn_time" name="newt" required><br><br>
+                <input type="submit" id="add_btn" value="Change Schedule" onclick="valid_trn()">
+            </form>
+        </div>
+
+        <div class="popup_form6" id="pop6">
+            <form action="trconnect.php" method="post">
+                <h4>Cancel Train</h4><hr><br>
+                <div class="close-btn"><button onclick="close_cancel_trn()">&times;</button></div>
+
+                Enter Train No: 
+                <input type="text" id="tno" name="tno" required><br><br>
+
+                <input type="submit" id="add_btn" value="Cancel Train" onclick="valid_trn()">
+            </form>
+        </div>
+            </form>
+        </div>
+    </body>
+</html>

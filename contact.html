@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>contact</title>
+        <link rel="stylesheet" type="text/css" href="CSS/contact.css">
+    </head>
+    <body>
+        <script>
+            function onMobile()
+            {
+                var regex_mob = /^\d{10}$/;
+                var regex_name = /^[A-Za-z]+$/;
+
+                var str_mob = document.getElementById("mob").value;
+                var str_fn = document.getElementById("fnm").value;
+                var str_ln = document.getElementById("lnm").value;
+
+                var res_mob = regex_mob.test(str_mob);
+                var res_fn = regex_name.test(str_fn);
+                var res_ln = regex_name.test(str_ln);
+
+                if(res_mob == false || res_fn == false || res_ln == false)
+                {
+                    window.alert("Please Enter Proper Details..!!")
+                }
+            }
+
+            function opneLocation(){
+                window.location.href="https://www.google.com/maps/place/Chhatrapati+Shivaji+Maharaj+Terminus/@18.9398497,72.8332588,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7ce27b8aa3bdf:0x21434b0703218d1b!8m2!3d18.9398446!4d72.8354475";
+            }
+
+        </script>
+
+        <header>
+            <a href="#" class="logo">MuMBaI LoCaL</a>
+
+            <ul>
+                <li><a href="example.html">Home</a></li>
+                <li><a href="example.html">Book Ticket</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="adm_login_cred.html">Admin Login<i class="fa-fa-home" style="color: white;"></i></a></li>
+            </ul>
+        </header>
+
+        <div class="head">
+
+
+            </header>
+        </div>
+    <section>
+
+    <div class="container">
+        <div class="contactinfo">
+            
+                <h2><b>Contact Information</b></h2>
+
+                <ul class="info">
+                    <li>
+                        <span><img src="Icons/loc_icon.png" height="60px"  width="65px" onclick="opneLocation()"></span><br>
+                        Chhatrapati Shivaji Maharaj Terminus Area, Fort, Mumbai, Maharashtra 400001
+                    </li>
+
+                    <li>
+                        <span><img src="Icons/mail_icon.png" height="60px"  width="60px"></span><br>
+                        care@irctc.co.in
+                    </li>
+
+                    <li>
+                        <span><img src="Icons/call_icon.png" height="60px"  width="60px"></span><br>
+                        0755-6610661 / 0755-4090600
+                    </li>
+                </ul>
+
+                <ul class="sci">
+                    <li><a href="https://www.facebook.com/irctchelp"><img src="Icons/fb_icon.png" height="40px" width="50px"></a></li>
+                    <li><a href="https://twitter.com/irctc_news"><img src="Icons/twt_icon.png" height="40px" width="50px"></a></li><br>
+                    <li><a href="https://www.instagram.com/irctc.official/?hl=en"><img src="Icons/insta_icon.png" height="40px" width="50px"></a></li>
+                    <li><a href="https://api.whatsapp.com/send?text=Mumbai+Local+Railway+Station+Phone+Number%20%0A%0A%20https://www.irctchelp.in/mumbai-local-railway-station-phone-number/"><img src="Icons/wp_icon.png" height="40px" width="50px"></a></li>
+                    <li><a href="https://www.pinterest.com/pin/create/button/?url=https://www.irctchelp.in/mumbai-local-railway-station-phone-number/&media=https://www.irctchelp.in/wp-content/uploads/2014/06/Mumbai-Local-at-Juinagar-station.jpg&description=Consolidated%20list%20all%20Mumbai%20local%20train%20%E2%9C%85%20Railway%20Station%20phone%20number%20available%20here%20with%20search%20option%20for%20Central%20and%20Western%20Railways."><img src="Icons/pintrest_icon.png" height="40px" width="50px"></a></li><br>
+                    <li><a href="https://in.linkedin.com/company/irctc"><img src="Icons/link_icon.png" height="40px" width="50px"></a></li><br>
+                </ul>
+
+                </div>
+                <div class="contactForm">
+                    <h4>Send us a message</h4>
+        
+                    <div class="formBox">
+                        <div>
+                            <form action="cont.php" method="post">
+                                
+                            <span>First name: </span>
+                            <input type="text" name="first_name" id="fnm" required><br>
+                    
+                            <br><span>Last name: </span>
+                            <input type="text" name="last_name" id="lnm" required><br>
+                        
+                            <br><span>Email address: </span>
+                           <input type="email" name="email" required><br>
+                        
+                            <br><span>Contact number: </span>
+                            <input type="text" name="mobile" id="mob" required><br>
+                        
+                            <br><span>Write your message here...</span><br><br>
+                            <input type="text" name="msg" required>
+                        
+                            <br><br><input type="submit" onclick="onMobile()" value="Send">
+                            </form>
+                        </div>
+                
+                </div>
+            </div>
+
+        </div>
+    </section>
+    </body>
+</html>

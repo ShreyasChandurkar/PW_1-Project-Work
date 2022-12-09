@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mumbai Local</title>
+        <link rel="stylesheet" href="CSS/example.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <script>
+            function open_book(){
+                document.getElementById("book").style.display="block";
+            }
+
+            function close_book(){
+                document.getElementById("book").style.display="none";
+            }
+            function valid()
+            {
+                var regex_mob = /^\d{10}$/;
+                var str_no = document.getElementById("pcon").value;
+                var res_no = regex_mob.test(str_no);
+
+                if(res_no == false)
+                {
+                    window.alert("Please Enter Proper Details..!!")
+                }
+            }
+        </script>
+
+        <header>
+            <a href="#" class="logo">MuMBaI LoCaL</a>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a onclick="open_book()">Book Ticket</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="adm_login_cred.html">Admin Login <i class="fa fa-address-book-o"></i></a></li>
+            </ul>
+        </header>
+        
+        <section class="banner"></section>
+
+        <div class="bookbtn">
+            <form action="displaytt.php" method="post">
+                <input type="submit" id="time-table" value="Local Timetable">
+                <input type="button" id="show-login" value="Book Your Ticket now" onclick="open_book()">
+            </form>
+        </div>
+
+        <div class="popup" id="book">
+            <div class="close-btn"><button onclick="close_book()">&times;</button></div>
+            <form id="book" action="pass.php" method="post">
+                <h2>BOOK YOUR TICKET HERE....</h2>
+                <br><label><b>Name:</b></b></label><br><br>
+                <input type="text" id="pname" name="pname" required><br><br>
+
+                <label><b>Age:</b></label><br><br>
+                <input type="number" id="page"name="page" required><br><br>
+
+                <label><b>Contact Number:</b></label><br><br>
+                <input type="number" id="pcon"name="pcon" required><br><br>
+                
+                <label><b>Source:</b></label><br><br>
+                <input type="text" id="source" name="source" required><br><br>
+
+                <label><b>Destination:</b></label><br><br>
+                <input type="text" id="dest" name="dest" required><br><br>
+
+                <input type="submit" value="Book Ticket" onclick="valid()">
+            </form>
+        </div>
+    </body>
+</html>

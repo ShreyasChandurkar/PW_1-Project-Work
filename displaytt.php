@@ -1,0 +1,55 @@
+
+<html>
+    <head>
+        <title>Trains Timetable</title>
+        <link rel="stylesheet" href="CSS/dispass.css">
+    </head>
+    <body>
+        <h1><b>Trains Timetable</b></h1><hr><br><br><?php
+$servername = "localhost";
+$database = "mumbailocal";
+$username = "root";
+$password = "";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
+$result = mysqli_query($conn,"SELECT * FROM traindetails");
+
+echo "<table border='1'>
+<tr>
+<th>Train_No</th>
+<th>Train_Name</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Arrival_Time</th>
+<th>Departure_Time</th>
+</tr>";
+
+while($row = mysqli_fetch_array($result))
+{
+echo "<tr>";
+echo "<td>" . $row['Train_No'] . "</td>";
+echo "<td>" . $row['Train_Name'] . "</td>";
+echo "<td>" . $row['Source'] . "</td>";
+echo "<td>" . $row['Destination'] . "</td>";
+echo "<td>" . $row['Arrival_Time'] . "</td>";
+echo "<td>" . $row['Departure_Time'] . "</td>";
+echo "</tr>";
+}
+echo "</table>";
+
+// if (mysqli_query($conn, $sql)) {
+//     //echo "Record Updated successfully";
+// } else {
+//     //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+// }
+mysqli_close($conn);
+?>
+    </body>
+</html>

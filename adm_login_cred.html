@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mumbai Local</title>
+        <link rel="stylesheet" href="CSS/adm_login_cred.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <script>
+            function login(){
+                var us = document.getElementById("user").value;
+                var ps = document.getElementById("pass").value;
+
+                if(us == "localadmin" && ps == "admin123"){
+                    window.location.href="adm_login.html";
+                }
+                else{
+                    alert("Enter Proper Credentails..!!")
+                }
+            }
+        </script>
+        <header>
+            <a href="#" class="logo">MuMBaI LoCaL</a>
+
+            <ul>
+                <li><a href="example.html">Home</a></li>
+                <li><a href="example.html">Book Ticket</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#">Admin Login <i class="fa fa-address-book-o"></i></a></li>
+            </ul>
+        </header>
+        
+        <section class="banner"></section>
+
+        <div class="popup" id="book">
+            <form id="book">
+                <h2>ADMIN LOGIN....</h2>
+
+                <br><label><b>Enter Username:</b></b></label><br><br>
+                <input type="text" id="user" ><br><br>
+
+                <label><b>Enter Password:</b></label><br><br>
+                <input type="text" id="pass" ><br><br>
+
+                <input type="button" value="Login" value="Login" onclick="login()">
+            </form>
+        </div>
+    </body>
+</html>
